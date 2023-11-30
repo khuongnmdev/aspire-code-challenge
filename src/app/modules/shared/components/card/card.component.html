@@ -1,0 +1,20 @@
+<div class="card-container">
+  <div class="card-header flex justify-content-end">
+    <img alt="dropdown icon" src="/assets/icons/aspire-logo-white.svg" />
+  </div>
+  <div class="card-body">
+    <h2 class="card-name">{{ cardData.name }}</h2>
+    <div class="card-number">
+      <span>{{ cardData.cardNumber | cardMask : cardData.isHideInfo }}</span>
+    </div>
+    <div class="flex">
+      <span class="card-expiration mr-3"
+        >Thur: {{ cardData.expirationDate }}</span
+      >
+      <span class="card-cvv">CVV: {{ cardData.cvvNumber }}</span>
+    </div>
+  </div>
+  <div class="card-footer flex justify-content-end">
+    <img alt="dropdown icon" src="/assets/icons/visa-logo.svg" />
+  </div>
+</div>

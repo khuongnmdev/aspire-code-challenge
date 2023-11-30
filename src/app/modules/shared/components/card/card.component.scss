@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.card-container {
+  background-color: var(--aspire-green);
+  border-radius: var(--border-radius);
+  color: var(--text-light);
+  padding: 1rem;
+}
