@@ -5,6 +5,11 @@ import { CardManagementComponent } from './components/card-management/card-manag
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'card-management'
+  },
+  {
+    path: 'card-management',
     component: CardManagementComponent,
   },
 ];

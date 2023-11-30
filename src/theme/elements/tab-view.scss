@@ -1,0 +1,11 @@
+.p-tabview {
+  .p-tabview-nav {
+    border: 1px solid transparent;
+
+    li:not(.p-highlight) {
+      .p-tabview-nav-link {
+        border: solid transparent;
+      }
+    }
+  }
+}

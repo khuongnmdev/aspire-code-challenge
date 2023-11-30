@@ -3,6 +3,6 @@ export interface CardType {
 	name: string;
 	cardNumber: string;
 	expirationDate: string;
-	cvvNumber: string;
-	isFreezed: boolean;
+	cvvNumber: number;
+	isHideInfo: boolean;
 };
