@@ -22,7 +22,9 @@
 
   &-number {
     font-size: var(--font-size-md);
-    margin-bottom: 13px;
+    // margin-bottom: 13px;
+    letter-spacing: 3px;
+    white-space: pre;
   }
 
   &-expiration,
@@ -33,6 +35,8 @@
 
 .hide-data {
   font-size: var(--font-size-xxl);
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .icon {

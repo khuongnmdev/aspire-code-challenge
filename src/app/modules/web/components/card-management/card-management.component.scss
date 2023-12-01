@@ -34,8 +34,10 @@
   margin-right: -1.25rem;
   padding: 1.25rem;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
-  background-color: var(--aspire-white);
+  // background-color: var(--aspire-white);
   border-radius: var(--border-radius);
+
+  background-color: transparent;
 }
 
 .button {

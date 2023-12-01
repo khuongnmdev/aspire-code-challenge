@@ -1,11 +1,16 @@
 .p-tabview {
+  font-family: "Open Sans", sans-serif;
   .p-tabview-nav {
     border: 1px solid transparent;
     background-color: transparent;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 1rem;
 
     li:not(.p-highlight) {
       .p-tabview-nav-link {
         border: solid transparent;
+        font-weight: normal;
       }
     }
 
@@ -16,7 +21,12 @@
         background-color: transparent;
         color: var(--aspire-white);
         font-size: var(--font-size-sm);
+        padding: 0.5rem 0;
       }
     }
+  }
+
+  .p-tabview-panels {
+    background-color: transparent;
   }
 }
