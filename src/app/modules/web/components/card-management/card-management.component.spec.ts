@@ -1,20 +1,22 @@
-/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CardManagementComponent } from './card-management.component';
+import { CardComponent } from '../../../shared/components/card/card.component';
+import { TabViewModule } from 'primeng/tabview';
+import { CardMaskPipe } from '../../../shared/pipes/card-mask.pipe';
 
 describe('CardManagementComponent', () => {
   let component: CardManagementComponent;
   let fixture: ComponentFixture<CardManagementComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
-      declarations: [ CardManagementComponent ]
+      declarations: [ CardManagementComponent, CardComponent,CardMaskPipe ],
+      imports: [
+        TabViewModule
+     ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CardManagementComponent);
