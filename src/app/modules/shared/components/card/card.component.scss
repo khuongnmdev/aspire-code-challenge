@@ -2,9 +2,43 @@
   display: block;
 }
 
-.card-container {
-  background-color: var(--aspire-green);
-  border-radius: var(--border-radius);
-  color: var(--text-light);
-  padding: 1rem;
+.card {
+  &-container {
+    background-color: var(--aspire-green);
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    padding: 1.5rem;
+    min-height: 220px;
+  }
+  &-header {
+    margin-bottom: 24px;
+  }
+
+  &-holder-name {
+    font-size: 1.375rem;
+    margin-bottom: 24px;
+  }
+
+  &-number {
+    font-size: 0.875rem;
+    margin-bottom: 13px;
+  }
+
+  &-expiration,
+  &-cvv {
+    font-size: 0.8125rem;
+  }
+}
+
+.hide-data {
+  font-size: 1.5rem;
+}
+
+.icon {
+  &-aspire {
+    height: 21px;
+  }
+  &-visa {
+    height: 21px;
+  }
 }
