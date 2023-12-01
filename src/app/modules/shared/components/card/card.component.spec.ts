@@ -34,8 +34,6 @@ describe('CardComponent', () => {
   it('should display card number', () => {
     component.cardData = {
       ...component.cardData,
-      cardNumber: '1234567812345678',
-      isHideInfo: false,
     };
     fixture.detectChanges();
     const cardHolderNameElement = fixture.nativeElement.querySelector('.card-number');
@@ -45,8 +43,6 @@ describe('CardComponent', () => {
   it('should display CVV', () => {
     component.cardData = {
       ...component.cardData,
-      cvvNumber: 123,
-      isHideInfo: false,
     };
     fixture.detectChanges();
     const cardHolderNameElement = fixture.nativeElement.querySelector('.card-cvv');

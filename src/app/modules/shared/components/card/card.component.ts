@@ -7,7 +7,7 @@ const DEFAULT_CARD: CardType = {
 	cardNumber: '1234567812345678',
 	expirationDate: '12/34',
 	cvvNumber: 123,
-	isHideInfo: true,
+	isHideInfo: false,
 }
 
 @Component({
