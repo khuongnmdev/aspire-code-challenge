@@ -9,29 +9,30 @@
     color: var(--text-light);
     padding: 1.5rem;
     min-height: 220px;
+    font-weight: bold;
   }
   &-header {
     margin-bottom: 24px;
   }
 
   &-holder-name {
-    font-size: 1.375rem;
+    font-size: var(--font-size-xl);
     margin-bottom: 24px;
   }
 
   &-number {
-    font-size: 0.875rem;
+    font-size: var(--font-size-md);
     margin-bottom: 13px;
   }
 
   &-expiration,
   &-cvv {
-    font-size: 0.8125rem;
+    font-size: var(--font-size-sm);
   }
 }
 
 .hide-data {
-  font-size: 1.5rem;
+  font-size: var(--font-size-xxl);
 }
 
 .icon {
