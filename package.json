@@ -5,9 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "ng build --base-href https://khuongnmdev.github.io/aspire-code-challenge/",
+    "deploy": "ng build && firebase deploy --token 1//0ei4oTyPvqvXPCgYIARAAGA4SNwF-L9IrYvAlVwhJcCVomqhIzhC1uTvKX_Slifdor2u5ZHY71e543BJryzeZVmcSjo4B3wwqHfA",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +20,7 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "firebase": "^10.7.0",
     "primeflex": "^3.3.1",
     "primeng": "^17.0.0-rc.1",
     "rxjs": "~7.8.0",
@@ -29,6 +31,7 @@
     "@angular-devkit/build-angular": "^17.0.3",
     "@angular/cli": "^17.0.3",
     "@angular/compiler-cli": "^17.0.0",
+    "@puppeteer/ng-schematics": "^0.5.2",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
