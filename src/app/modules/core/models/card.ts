@@ -1,6 +1,6 @@
 export interface CardType {
 	id: string;
-	name: string;
+	cardHolderName: string;
 	cardNumber: string;
 	expirationDate: string;
 	cvvNumber: number;

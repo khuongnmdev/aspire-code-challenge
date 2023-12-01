@@ -1,13 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, } from '@angular/core';
 import { CardType } from '../../../core/models/card';
 
 const DEFAULT_CARD: CardType = {
 	id: '',
-	name: 'Name On Card',
+	cardHolderName: 'Name On Card',
 	cardNumber: '1234567812345678',
 	expirationDate: '12/34',
 	cvvNumber: 123,
-	isHideInfo: false,
+	isHideInfo: true,
 }
 
 @Component({
@@ -15,12 +15,6 @@ const DEFAULT_CARD: CardType = {
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() public cardData: CardType = DEFAULT_CARD;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
