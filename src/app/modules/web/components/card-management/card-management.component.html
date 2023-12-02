@@ -1,7 +1,7 @@
 <div class="page-header">
   <img
     class="mobile-logo"
-    alt="Logo Aspire Small"
+    alt="Aspire logo small"
     src="/assets/icons/aspire-logo-sm.svg"
   />
   <div class="account-info">
@@ -11,7 +11,7 @@
         <span class="account-currency inline-block py-1 px-3 mr-2">S$</span>
         <span class="account-balance">3,000</span>
       </div>
-      <button pButton pRipple class="a-button button-add">
+      <button pButton pRipple class="aspire-button button-add">
         <img
           class="button-icon mr-2"
           alt="Icon add"
@@ -26,7 +26,63 @@
 <p-tabView>
   <p-tabPanel header="My debits cards">
     <div class="tab-body">
-      <app-card></app-card>
+      <div class="tab-body-left">
+        <div class="card-list">
+          <p-carousel
+            [value]="cardList"
+            [numVisible]="1"
+            [numScroll]="1"
+            [circular]="false"
+          >
+            <ng-template let-card pTemplate="item">
+              <app-card [cardData]="card"></app-card>
+            </ng-template>
+          </p-carousel>
+        </div>
+        <div class="card-actions flex justify-content-between gap-1">
+          <button pButton pRipple class="aspire-button-action">
+            <img
+              class="button-icon mb-2"
+              alt="Icon freeze card"
+              src="/assets/icons/freeze-card.svg"
+            />
+            <span>Freeze card</span>
+          </button>
+          <button pButton pRipple class="aspire-button-action">
+            <img
+              class="button-icon mb-2"
+              alt="Icon set spend limit"
+              src="/assets/icons/set-spend-limit.svg"
+            />
+            <span>Set spend limit</span>
+          </button>
+          <button pButton pRipple class="aspire-button-action">
+            <img
+              class="button-icon mb-2"
+              alt="Icon google pay"
+              src="/assets/icons/google-pay.svg"
+            />
+            <span>Add to GPay</span>
+          </button>
+          <button pButton pRipple class="aspire-button-action">
+            <img
+              class="button-icon mb-2"
+              alt="Icon replace card"
+              src="/assets/icons/replace-card.svg"
+            />
+            <span>Replace card</span>
+          </button>
+          <button pButton pRipple class="aspire-button-action">
+            <img
+              class="button-icon mb-2"
+              alt="Icon cancel card"
+              src="/assets/icons/cancel-card.svg"
+            />
+            <span>Cancel Card</span>
+          </button>
+        </div>
+      </div>
+      <div class="tab-body-right"></div>
     </div>
   </p-tabPanel>
   <p-tabPanel header="All company cards" [disabled]="true">

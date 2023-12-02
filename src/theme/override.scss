@@ -3,11 +3,16 @@
 :root {
   --aspire-green: #01d167;
   --aspire-white: #fff;
-  --aspire-light-blue: #23cefd;
+  --aspire-blue: #23cefd;
+  --aspire-light-blue: #edf3ff;
   --aspire-bg-light: #fff;
   --aspire-bg-dark: #0c365a;
+  --aspire-bg-element: var(--aspire-light-blue);
+
   --text-light: var(--aspire-white);
-  --border-radius: 12px;
+  --text-color: #0c365a;
+  --border-radius-tab: 12px;
+  --border-radius-element: 16px;
 
   --font-size-xxs: 0.5625rem; // 9px
   --font-size-xs: 0.75rem; // 12px
@@ -19,16 +24,35 @@
   --font-size-xxxl: 1.625rem; // 26px
 }
 
-.a-button {
+.aspire-button {
   font-family: "Open Sans";
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 8px 12px;
+
+  background: transparent;
+  border: transparent;
+  color: var(--aspire-blue);
+  font-size: var(--font-size-sm);
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.aspire-button-action {
+  font-family: "Open Sans";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: transparent;
+
+  color: var(--text-color);
+  font-size: var(--font-size-sm);
+  padding: 0;
+  max-width: 70px;
 }
 
 /* You can add global styles to this file, and also import other style files */
