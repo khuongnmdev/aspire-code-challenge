@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
 
 import { CardManagementComponent } from './components/card-management/card-management.component';
+import { WebComponent } from './web.component';
 
 const THEME_MODULES = [
   AccordionModule,
@@ -25,6 +26,6 @@ const THEME_MODULES = [
     SharedModule,
     ...THEME_MODULES,
   ],
-  declarations: [CardManagementComponent]
+  declarations: [CardManagementComponent, WebComponent]
 })
 export class WebModule { }
