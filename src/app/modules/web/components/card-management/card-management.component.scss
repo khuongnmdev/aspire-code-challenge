@@ -36,6 +36,11 @@
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
   border-radius: var(--border-radius-tab);
   background-color: transparent;
+
+  &-right {
+    padding: 1.25rem;
+    background-color: var(--aspire-bg-light);
+  }
 }
 
 .card {
@@ -43,7 +48,101 @@
     border-top-left-radius: var(--border-radius-element);
     border-top-right-radius: var(--border-radius-element);
     background-color: var(--aspire-bg-element);
-
     padding: 1.25rem;
   }
+}
+
+.transaction {
+  &-list {
+    margin: 0;
+    padding-inline-start: 0;
+    z-index: 2;
+    position: relative;
+    background-color: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid #e5e7eb;
+    border-top: none;
+  }
+  &-item {
+    &-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      &.blue {
+        background-color: #009dff1a;
+      }
+      &.green {
+        background-color: #00d6b51a;
+      }
+      &.pink {
+        background-color: #f251951a;
+      }
+    }
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #f0f0f0;
+    }
+  }
+  &-info {
+    display: flex;
+  }
+  &-detail {
+  }
+  &-title {
+    margin: 0;
+    font-size: var(--font-size-md);
+    color: #222222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+  }
+  &-time {
+    font-size: var(--font-size-sm);
+    color: #aaaaaa;
+  }
+  &-action {
+    &-icon {
+      width: 24px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #325baf;
+    }
+    &-detail {
+      color: #325baf;
+      font-size: var(--font-size-xs);
+      font-weight: bold;
+    }
+  }
+  &-change {
+    font-size: var(--font-size-md);
+    font-weight: bold;
+    &.credit {
+      color: var(--aspire-green);
+    }
+  }
+  &-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #edfff5;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index: 1;
+    margin-top: -2px;
+    position: relative;
+  }
+  &-link {
+    color: #01d167;
+    font-weight: bold;
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+  }
+}
+
+.empty-list {
+  background-color: var(--aspire-bg-light);
+  border-radius: var(--border-radius-element);
 }

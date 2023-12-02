@@ -1,3 +1,5 @@
+@import "./elements/accordion.scss";
+@import "./elements/button.scss";
 @import "./elements/tab-view.scss";
 
 :root {
@@ -24,38 +26,8 @@
   --font-size-xxxl: 1.625rem; // 26px
 }
 
-.aspire-button {
-  font-family: "Open Sans";
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 12px;
-
-  background: transparent;
-  border: transparent;
-  color: var(--aspire-blue);
-  font-size: var(--font-size-sm);
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.aspire-button-action {
-  font-family: "Open Sans";
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: transparent;
-
-  color: var(--text-color);
-  font-size: var(--font-size-sm);
-  padding: 0;
-  max-width: 70px;
-}
-
 /* You can add global styles to this file, and also import other style files */
 :root {
   font-family: "Open Sans", sans-serif;
+  --font-family: "Open Sans", sans-serif;
 }

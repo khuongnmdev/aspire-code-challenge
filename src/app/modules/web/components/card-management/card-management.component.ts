@@ -33,7 +33,7 @@ const MOCK_DATA = [{
 })
 export class CardManagementComponent implements OnInit {
 
-  public readonly cardList: CardType[]= MOCK_DATA;
+  public readonly cardList: CardType[] = [];
   constructor() { }
 
   ngOnInit() {
