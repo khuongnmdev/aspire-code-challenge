@@ -98,9 +98,6 @@ The web url is https://k-aspire-challege-code.web.app
 │ ├── shared # Contain shared components, pipes ...
 │ │ ├── components # Contain sidebar, header, footer, re-useable components
 │ │ └── pipes # Contain pipes directives.
-│ ├── shared # Contain shared components, pipes ...
-│ │ ├── components # Contain sidebar, header, footer, re-useable components
-│ │ └── pipes # Contain pipes directives.
 │ ├── theme # Implement Theme UI for component, support multiple UI (Bootstrap, Material...)
 │ ├── web # Module for web UI.
 │ └── ... # etc.
