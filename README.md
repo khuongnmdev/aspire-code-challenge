@@ -88,9 +88,9 @@ The web url is https://k-aspire-challege-code.web.app
 
 ## Project structure
 
-.
+```
 ├── ...
-├── modules  
+├── modules
 │ ├── core # Core modules for project
 │ │ ├── enums # Contain enum types
 │ │ ├── models # Contain data models
@@ -111,3 +111,4 @@ The web url is https://k-aspire-challege-code.web.app
 LinkedIn: [Khuong Nguyen Manh](https://www.linkedin.com/in/khuongnm91/)
 Email: [khuongnm.dev@gmail.com](mailto:khuongnm.dev@gmail.com)
 Skype: khuongnm.dev@gmail.com
+```
