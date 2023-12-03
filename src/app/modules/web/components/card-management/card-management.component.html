@@ -11,7 +11,12 @@
         <span class="account-currency inline-block py-1 px-3 mr-2">S$</span>
         <span class="account-balance">3,000</span>
       </div>
-      <button pButton pRipple class="button aspire-button button-add">
+      <button
+        pButton
+        pRipple
+        class="button aspire-button button-add"
+        (click)="openCardCreationDialog()"
+      >
         <img
           class="button-icon mr-2"
           alt="Icon add"
@@ -28,29 +33,32 @@
     <div class="tab-body">
       <div class="tab-body-left">
         <div class="card-list">
-          <ng-container *ngIf="cardList.length > 0; else emptyList">
-            <button
-              pButton
-              pRipple
-              class="button aspire-button button-toggle-card"
-            >
-              <img
-                class="button-icon mr-2"
-                alt="Icon add"
-                src="/assets/icons/add.svg"
-              />
-              <span>Hide card</span>
-            </button>
-            <p-carousel
-              [value]="cardList"
-              [numVisible]="1"
-              [numScroll]="1"
-              [circular]="false"
-            >
-              <ng-template let-card pTemplate="item">
-                <app-card [cardData]="card"></app-card>
-              </ng-template>
-            </p-carousel>
+          <ng-container *ngIf="cardList$ | async as cardList">
+            <ng-container *ngIf="cardList.length > 0; else emptyList">
+              <button
+                pButton
+                pRipple
+                class="button aspire-button button-toggle-card"
+              >
+                <img
+                  class="button-icon mr-2"
+                  alt="Icon add"
+                  src="/assets/icons/add.svg"
+                />
+                <span>Hide card</span>
+              </button>
+              <p-carousel
+                [value]="cardList"
+                [numVisible]="1"
+                [numScroll]="1"
+                [circular]="false"
+                (onPage)="currentCard($event)"
+              >
+                <ng-template let-card pTemplate="item">
+                  <app-card [cardData]="card"></app-card>
+                </ng-template>
+              </p-carousel>
+            </ng-container>
           </ng-container>
         </div>
         <div class="card-actions flex justify-content-between gap-1">
@@ -86,13 +94,18 @@
             />
             <span>Replace card</span>
           </button>
-          <button pButton pRipple class="button aspire-button-action">
+          <button
+            pButton
+            pRipple
+            class="button aspire-button-action"
+            (click)="removeCard()"
+          >
             <img
               class="button-icon mb-2"
               alt="Icon cancel card"
               src="/assets/icons/cancel-card.svg"
             />
-            <span>Cancel Card</span>
+            <span>Cancel card</span>
           </button>
         </div>
       </div>

@@ -1,31 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WebRoutes } from './web.routing';
+import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
+import { WebRoutes } from './web.routing';
 
-import { AccordionModule } from 'primeng/accordion';
-import { CardModule } from 'primeng/card';
-import { CarouselModule } from 'primeng/carousel';
-import { ButtonModule } from 'primeng/button';
-import { TabViewModule } from 'primeng/tabview';
-
+import { ThemeModule } from '../theme/theme.module';
 import { CardManagementComponent } from './components/card-management/card-management.component';
 import { WebComponent } from './web.component';
 
-const THEME_MODULES = [
-  AccordionModule,
-  CardModule,
-  CarouselModule,
-  ButtonModule,
-  TabViewModule
-]
 @NgModule({
-  imports: [
-    CommonModule,
-    WebRoutes,
-    SharedModule,
-    ...THEME_MODULES,
-  ],
-  declarations: [CardManagementComponent, WebComponent]
+  imports: [CommonModule, WebRoutes, SharedModule, ThemeModule],
+  declarations: [CardManagementComponent, WebComponent],
+  providers: [],
 })
-export class WebModule { }
+export class WebModule {}
