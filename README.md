@@ -106,6 +106,6 @@ The web url is https://k-aspire-challege-code.web.app
 
 ## Contact
 
-LinkedIn: [Khuong Nguyen Manh](https://www.linkedin.com/in/khuongnm91/)
-Email: [khuongnm.dev@gmail.com](mailto:khuongnm.dev@gmail.com)
-Skype: khuongnm.dev@gmail.com
+### LinkedIn: [Khuong Nguyen Manh](https://www.linkedin.com/in/khuongnm91/)
+### Email: [khuongnm.dev@gmail.com](mailto:khuongnm.dev@gmail.com)
+### Skype: khuongnm.dev@gmail.com
