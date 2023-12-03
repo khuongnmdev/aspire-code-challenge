@@ -2,54 +2,50 @@
   display: block;
 }
 
-.card {
-  &-container {
-    background-color: var(--aspire-green);
-    border-radius: var(--border-radius);
-    color: var(--text-light);
-    padding: 1.5rem;
-    min-height: 220px;
-    font-weight: bold;
-  }
-  &-header {
+.card-container {
+  background-color: var(--aspire-green);
+  border-radius: var(--border-radius);
+  color: var(--text-light);
+  padding: 1.5rem;
+  min-height: 220px;
+  font-weight: bold;
+
+  .card-header {
     margin-bottom: 24px;
   }
 
-  &-holder-name {
+  .card-holder-name {
     font-size: var(--font-size-xl);
     margin-bottom: 24px;
-    text-transform: uppercase;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 300px;
   }
 
-  &-info {
+  .card-info {
     line-height: 2rem;
   }
 
-  &-number {
+  .card-number {
     font-size: var(--font-size-md);
     letter-spacing: 3px;
     white-space: pre;
   }
 
-  &-expiration,
-  &-cvv {
+  .card-expiration,
+  .card-cvv {
     line-height: 2rem;
   }
-}
 
-.hide-data {
-  margin-left: 0.5rem;
-}
+  .hide-data {
+    margin-left: 0.5rem;
+  }
 
-.icon {
-  &-aspire {
+  .icon-aspire {
     height: 21px;
   }
-  &-visa {
+  .icon-visa {
     height: 21px;
   }
 }

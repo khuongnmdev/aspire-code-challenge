@@ -9,11 +9,13 @@
   --aspire-white: #fff;
   --aspire-blue: #23cefd;
   --aspire-light-blue: #edf3ff;
+  --aspire-dark-blue: #325baf;
   --aspire-bg-light: #fff;
   --aspire-bg-dark: #0c365a;
   --aspire-bg-element: var(--aspire-light-blue);
 
-  --text-light: var(--aspire-white);
+  --text-light: #fff;
+  --text-dark: #222222;
   --text-color: #0c365a;
   --border-radius-tab: 12px;
   --border-radius-element: 16px;
@@ -22,6 +24,7 @@
   --font-size-xs: 0.75rem; // 12px
   --font-size-sm: 0.8125rem; // 13px
   --font-size-md: 0.875rem; // 14px
+  --font-size-lg: 0.9375rem; // 15px
   --font-size-default: 1rem; // 16px
   --font-size-xl: 1.375rem; // 22px
   --font-size-xxl: 1.5rem; // 24px

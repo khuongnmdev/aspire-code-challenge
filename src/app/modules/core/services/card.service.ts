@@ -10,8 +10,8 @@ const MOCK_DATA = [
     cardNumber: '1234567812345678',
     expirationDate: '12/34',
     cvvNumber: 123,
-    isHideInfo: true,
-    isFreezed: true,
+    isHideInfo: false,
+    isFreezed: false,
   },
   {
     id: uuidv4(),
@@ -28,8 +28,8 @@ const MOCK_DATA = [
     cardNumber: '1234567812345678',
     expirationDate: '12/34',
     cvvNumber: 765,
-    isHideInfo: false,
-    isFreezed: false,
+    isHideInfo: true,
+    isFreezed: true,
   },
 ];
 

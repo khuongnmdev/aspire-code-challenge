@@ -7,7 +7,7 @@
     />
   </div>
   <div class="card-body">
-    <h2 class="card-holder-name">{{ cardData.cardHolderName }}</h2>
+    <h2 class="card-holder-name uppercase">{{ cardData.cardHolderName }}</h2>
     <div class="card-number">
       <span>{{ cardData.cardNumber | cardMask : cardData.isHideInfo }}</span>
     </div>

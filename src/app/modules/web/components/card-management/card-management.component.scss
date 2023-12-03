@@ -15,18 +15,23 @@
     right: 25px;
   }
 
-  .account {
-    &-currency {
-      border-radius: 4px;
-      background-color: var(--aspire-green);
-      font-size: var(--font-size-xs);
-      font-weight: bold;
-    }
+  .account-currency {
+    border-radius: 4px;
+    background-color: var(--aspire-green);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+  }
 
-    &-balance {
-      font-size: var(--font-size-xxl);
-      font-weight: bold;
-    }
+  .account-balance {
+    font-size: var(--font-size-xxl);
+    font-weight: bold;
+  }
+
+  .button-add--desktop {
+    display: none;
+    background-color: var(--aspire-dark-blue);
+    color: var(--text-light);
+    padding: 0.5rem 0.75rem;
   }
 }
 
@@ -37,7 +42,7 @@
   border-radius: var(--border-radius-tab);
   background-color: transparent;
 
-  &-right {
+  .tab-body-right {
     padding: 1.25rem 1.25rem 4rem;
     background-color: var(--aspire-bg-light);
   }
@@ -55,16 +60,18 @@
   }
 }
 
-.card {
-  &-list {
-    padding: 1.5rem;
-  }
-  &-actions {
-    border-top-left-radius: var(--border-radius-element);
-    border-top-right-radius: var(--border-radius-element);
-    background-color: var(--aspire-bg-element);
-    padding: 1.25rem;
-  }
+.card-list {
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.card-actions {
+  border-top-left-radius: var(--border-radius-element);
+  border-top-right-radius: var(--border-radius-element);
+  background-color: var(--aspire-bg-element);
+  padding: 1.25rem;
 }
 
 .empty-list {
@@ -77,37 +84,84 @@
     background-color: var(--aspire-bg-light);
   }
   .page-header {
-    color: var(--text-color);
+    color: var(--text-dark);
     padding: 3rem 0 1.5rem;
 
     .mobile-logo {
       display: none;
     }
 
-    .account {
-      &-currency {
-        border-radius: 4px;
-        background-color: var(--aspire-green);
-        font-size: var(--font-size-xs);
-        font-weight: bold;
-      }
+    .account-balance {
+      font-size: var(--font-size-xxxl);
+      font-weight: bold;
+    }
 
-      &-balance {
-        font-size: var(--font-size-xxl);
-        font-weight: bold;
-      }
+    .button-add--mobile {
+      display: none;
+    }
+
+    .button-add--desktop {
+      display: flex;
     }
   }
+  .button-toggle-card {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+  }
+
   .tab-body {
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
     border-radius: var(--border-radius-tab);
-    background-color: transparent;
-
-    &-right {
-      padding: 1.25rem;
+    background-color: var(--aspire-bg-light);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    .tab-body-left,
+    .tab-body-right {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 3.5rem 0.5rem;
+    }
+    .tab-body-right {
       background-color: var(--aspire-bg-light);
+    }
+  }
+
+  .card-list {
+    padding: 0;
+    max-width: 414px;
+  }
+  .card-actions {
+    border-radius: var(--border-radius-element);
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tab-body {
+    .tab-body-left,
+    .tab-body-right {
+      padding: 3.5rem 1.5rem;
+    }
+  }
+}
+
+@media (min-width: 1366px) {
+  .tab-body {
+    .tab-body-left,
+    .tab-body-right {
+      padding: 3.5rem 2rem;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .tab-body {
+    .tab-body-left,
+    .tab-body-right {
+      padding: 3.5rem;
     }
   }
 }

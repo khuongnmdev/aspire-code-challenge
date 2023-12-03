@@ -15,13 +15,26 @@
       <button
         pButton
         pRipple
-        class="button aspire-button button-add"
+        class="button aspire-button button-add--mobile"
         (click)="openCardCreationDialog()"
       >
         <img
           class="button-icon mr-2"
           alt="Icon add"
           src="/assets/icons/add.svg"
+        />
+        <span>New card</span>
+      </button>
+      <button
+        pButton
+        pRipple
+        class="button aspire-button button-add--desktop"
+        (click)="openCardCreationDialog()"
+      >
+        <img
+          class="button-icon mr-2"
+          alt="Icon add"
+          src="/assets/icons/add-white.svg"
         />
         <span>New card</span>
       </button>
