@@ -1,4 +1,21 @@
 :host {
-  display: block;
+  display: flex;
+  min-height: 100vh;
   padding-bottom: 4rem;
+}
+
+.router-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+@media (min-width: 992px) {
+  :host {
+    padding-bottom: 0;
+  }
+  .router-container {
+    width: calc(100vw - var(--aside-nav-with));
+    padding: 0 3.5rem;
+  }
 }

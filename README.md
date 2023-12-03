@@ -16,4 +16,4 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Deployment production
 
-Run `npm run deploy` to build and deploy to [Firebase](https://k-aspire-challege-code.web.app/card-management).
+Run `npm run deploy` to build and deploy to [Firebase](https://k-aspire-challege-code.web.app).

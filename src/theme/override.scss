@@ -28,10 +28,21 @@
   --font-size-xxxl: 1.625rem; // 26px
 
   --menu-index: 100;
+
+  --aside-nav-with: 340px;
 }
 
 /* You can add global styles to this file, and also import other style files */
 :root {
   font-family: "Open Sans", sans-serif;
   --font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-inline-start: 0;
 }
