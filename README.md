@@ -88,20 +88,6 @@ The web url is https://k-aspire-challege-code.web.app
 
 ## Project structure
 
-...
-├── ...
-├── modules
-│......├── core # Core modules for project
-│......│......├── enums # Contain enum types
-│......│......├── models # Contain data models
-│......│......└── services # Contain Angular service, HTTP request...
-│......├── shared # Contain shared components, pipes ...
-│......│......└── components # Contain sidebar, header, footer, re-useable components
-│......│......└── pipes # Contain pipes directives.
-│......├── theme # Implement Theme UI for component, here I use PrimeNG which support Accordion and Carousel for UI. In some cases, some projects must support multiple UI (Bootstrap, Material...) between Admin and User UI.
-│......├── web # Module for web UI.
-└── ...
-
 .
 ├── ...
 ├── modules  
@@ -115,8 +101,7 @@ The web url is https://k-aspire-challege-code.web.app
 │ ├── shared # Contain shared components, pipes ...
 │ │ ├── components # Contain sidebar, header, footer, re-useable components
 │ │ └── pipes # Contain pipes directives.
-│ ├── theme # Implement Theme UI for component, here I use PrimeNG which support Accordion and Carousel for UI. In some cases, some projects must support multiple UI (Bootstrap, Material...) between Admin and User UI.
-
+│ ├── theme # Implement Theme UI for component, support multiple UI (Bootstrap, Material...)
 │ ├── web # Module for web UI.
 │ └── ... # etc.
 └── ...
