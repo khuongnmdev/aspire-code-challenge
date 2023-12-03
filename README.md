@@ -101,3 +101,28 @@ The web url is https://k-aspire-challege-code.web.app
 │......├── theme # Implement Theme UI for component, here I use PrimeNG which support Accordion and Carousel for UI. In some cases, some projects must support multiple UI (Bootstrap, Material...) between Admin and User UI.
 │......├── web # Module for web UI.
 └── ...
+
+.
+├── ...
+├── modules  
+│ ├── core # Core modules for project
+│ │ ├── enums # Contain enum types
+│ │ ├── models # Contain data models
+│ │ └── services # Contain Angular service, HTTP request...
+│ ├── shared # Contain shared components, pipes ...
+│ │ ├── components # Contain sidebar, header, footer, re-useable components
+│ │ └── pipes # Contain pipes directives.
+│ ├── shared # Contain shared components, pipes ...
+│ │ ├── components # Contain sidebar, header, footer, re-useable components
+│ │ └── pipes # Contain pipes directives.
+│ ├── theme # Implement Theme UI for component, here I use PrimeNG which support Accordion and Carousel for UI. In some cases, some projects must support multiple UI (Bootstrap, Material...) between Admin and User UI.
+
+│ ├── web # Module for web UI.
+│ └── ... # etc.
+└── ...
+
+## Contact
+
+LinkedIn: [Khuong Nguyen Manh](https://www.linkedin.com/in/khuongnm91/)
+Email: [khuongnm.dev@gmail.com](mailto:khuongnm.dev@gmail.com)
+Skype: khuongnm.dev@gmail.com
