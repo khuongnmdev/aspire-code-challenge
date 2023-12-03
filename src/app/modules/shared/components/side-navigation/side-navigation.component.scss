@@ -1,5 +1,5 @@
 .aside-navigation {
-  width: 340px;
+  width: var(--aside-nav-width-sm);
   height: 100%;
   background-color: var(--aspire-bg-dark);
   color: var(--aspire-white);
@@ -16,16 +16,16 @@
   .aside-navigation-list {
     display: flex;
     flex-direction: column;
-    .aside-navigation-item {
-      display: block;
-      padding: 2.5rem 0;
-    }
-    .aside-navigation-link {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      cursor: pointer;
-    }
+  }
+  .aside-navigation-item {
+    display: block;
+    padding: 1.5rem 0;
+  }
+  .aside-navigation-link {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    cursor: pointer;
   }
 }
 
@@ -33,5 +33,17 @@
   .aside-navigation {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media (min-width: 1200px) {
+  .aside-navigation {
+    width: var(--aside-nav-width);
+    .intro {
+      padding-bottom: 2rem;
+    }
+    .aside-navigation-item {
+      padding: 2rem 0;
+    }
   }
 }
