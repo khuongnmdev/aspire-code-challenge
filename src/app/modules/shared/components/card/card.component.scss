@@ -18,24 +18,30 @@
   &-holder-name {
     font-size: var(--font-size-xl);
     margin-bottom: 24px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+  }
+
+  &-info {
+    line-height: 2rem;
   }
 
   &-number {
     font-size: var(--font-size-md);
-    // margin-bottom: 13px;
     letter-spacing: 3px;
     white-space: pre;
   }
 
   &-expiration,
   &-cvv {
-    font-size: var(--font-size-sm);
+    line-height: 2rem;
   }
 }
 
 .hide-data {
-  font-size: var(--font-size-xxl);
-  margin-top: 0.5rem;
   margin-left: 0.5rem;
 }
 

@@ -1,8 +1,8 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { ThemeModule } from '../../../theme/theme.module';
+import { SharedModule } from '../../shared.module';
 import { CardCreationDialogComponent } from './card-creation-dialog.component';
 
 describe('CardCreationDialogComponent', () => {
@@ -11,9 +11,10 @@ describe('CardCreationDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardCreationDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [CardCreationDialogComponent],
+      imports: [SharedModule, ThemeModule],
+      providers: [DialogService, DynamicDialogRef],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

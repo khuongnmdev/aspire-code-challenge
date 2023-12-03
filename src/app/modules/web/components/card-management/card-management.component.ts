@@ -1,22 +1,17 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  DestroyRef,
-  OnInit,
-  inject,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ConfirmationService } from 'primeng/api';
+import { CarouselPageEvent } from 'primeng/carousel';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { Observable, ReplaySubject, Subject, delay, of, tap } from 'rxjs';
+import { Observable, ReplaySubject, of, takeUntil, tap } from 'rxjs';
 import { CardType } from '../../../core/models/card';
 import { CardService } from '../../../core/services/card.service';
 import { CardCreationDialogComponent } from '../../../shared/components/card-creation-dialog/card-creation-dialog.component';
-import { CarouselPageEvent } from 'primeng/carousel';
 
 @Component({
   selector: 'app-card-management',
   templateUrl: './card-management.component.html',
   styleUrls: ['./card-management.component.scss'],
-  providers: [DialogService],
+  providers: [DialogService, ConfirmationService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardManagementComponent implements OnInit {
@@ -24,11 +19,14 @@ export class CardManagementComponent implements OnInit {
 
   private dialogRef: DynamicDialogRef | undefined;
 
-  private currentIndex = -1;
+  protected currentIndex = -1;
+
+  private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
   public constructor(
-    public readonly dialogService: DialogService,
-    public readonly cardService: CardService
+    private readonly dialogService: DialogService,
+    private readonly confirmationService: ConfirmationService,
+    private readonly cardService: CardService
   ) {
     this.cardList$ = of([]);
   }
@@ -39,8 +37,14 @@ export class CardManagementComponent implements OnInit {
         if (cardList.length > 0 && this.currentIndex < 0) {
           this.currentIndex = 0;
         }
-      })
+      }),
+      takeUntil(this.destroyed$)
     );
+  }
+
+  public ngOnDestroy() {
+    this.destroyed$.next(true);
+    this.destroyed$.complete();
   }
 
   protected openCardCreationDialog(): void {
@@ -72,6 +76,26 @@ export class CardManagementComponent implements OnInit {
     if (this.currentIndex < 0) {
       return;
     }
-    this.cardService.removeCard(this.currentIndex);
+    this.confirmationService.confirm({
+      message: 'Do you want to remove this card?',
+      header: 'Confirmation',
+      accept: () => {
+        this.cardService.removeCard(this.currentIndex);
+      },
+    });
+  }
+
+  protected toggleCard(): void {
+    if (this.currentIndex < 0) {
+      return;
+    }
+    this.cardService.toggleCard(this.currentIndex);
+  }
+
+  protected toggleFreezing(): void {
+    if (this.currentIndex < 0) {
+      return;
+    }
+    this.cardService.toggleFreezing(this.currentIndex);
   }
 }

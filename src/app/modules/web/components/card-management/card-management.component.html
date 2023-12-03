@@ -1,3 +1,4 @@
+<p-confirmDialog [style]="{ 'min-width': '400px' }"></p-confirmDialog>
 <div class="page-header">
   <img
     class="mobile-logo"
@@ -39,20 +40,39 @@
                 pButton
                 pRipple
                 class="button aspire-button button-toggle-card"
+                (click)="toggleCard()"
+                [ngClass]="{ 'is-freezed': cardList[currentIndex]?.isFreezed }"
+                [disabled]="cardList[currentIndex]?.isFreezed"
               >
-                <img
-                  class="button-icon mr-2"
-                  alt="Icon add"
-                  src="/assets/icons/add.svg"
-                />
-                <span>Hide card</span>
+                <ng-container
+                  *ngIf="cardList[currentIndex].isHideInfo; else hideInfo"
+                >
+                  <img
+                    class="button-icon mr-2"
+                    alt="Icon eye"
+                    src="/assets/icons/eye.svg"
+                  />
+                  <span>Hide card number</span>
+                </ng-container>
+
+                <ng-template #hideInfo>
+                  <img
+                    class="button-icon mr-2"
+                    alt="Icon eye"
+                    src="/assets/icons/eye.svg"
+                  />
+                  <span>Show card number</span>
+                </ng-template>
               </button>
+
               <p-carousel
                 [value]="cardList"
                 [numVisible]="1"
                 [numScroll]="1"
                 [circular]="false"
                 (onPage)="currentCard($event)"
+                [showNavigators]="false"
+                [ngClass]="{ 'is-freezed': cardList[currentIndex].isFreezed }"
               >
                 <ng-template let-card pTemplate="item">
                   <app-card [cardData]="card"></app-card>
@@ -62,7 +82,12 @@
           </ng-container>
         </div>
         <div class="card-actions flex justify-content-between gap-1">
-          <button pButton pRipple class="button aspire-button-action">
+          <button
+            pButton
+            pRipple
+            class="button aspire-button-action"
+            (click)="toggleFreezing()"
+          >
             <img
               class="button-icon mb-2"
               alt="Icon freeze card"

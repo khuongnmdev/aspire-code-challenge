@@ -4,6 +4,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { TabViewModule } from 'primeng/tabview';
 
@@ -13,14 +14,12 @@ const THEME_MODULES = [
   CarouselModule,
   ButtonModule,
   TabViewModule,
-  InputTextModule
-]
+  InputTextModule,
+  ConfirmDialogModule,
+];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ...THEME_MODULES,
-  ],
-  exports: [...THEME_MODULES]
+  imports: [CommonModule, ...THEME_MODULES],
+  exports: [...THEME_MODULES],
 })
-export class ThemeModule { }
+export class ThemeModule {}

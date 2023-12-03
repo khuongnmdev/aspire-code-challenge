@@ -8,7 +8,7 @@ describe('CardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CardComponent,CardMaskPipe],
+      declarations: [CardComponent, CardMaskPipe],
     }).compileComponents();
   });
 
@@ -27,7 +27,8 @@ describe('CardComponent', () => {
       cardHolderName: 'Test Name',
     };
     fixture.detectChanges();
-    const cardHolderNameElement = fixture.nativeElement.querySelector('.card-holder-name');
+    const cardHolderNameElement =
+      fixture.nativeElement.querySelector('.card-holder-name');
     expect(cardHolderNameElement.textContent).toContain('Test Name');
   });
 
@@ -36,8 +37,11 @@ describe('CardComponent', () => {
       ...component.cardData,
     };
     fixture.detectChanges();
-    const cardHolderNameElement = fixture.nativeElement.querySelector('.card-number');
-    expect(cardHolderNameElement.textContent).toContain('1234 5678 1234 5678');
+    const cardHolderNameElement =
+      fixture.nativeElement.querySelector('.card-number');
+    expect(cardHolderNameElement.textContent).toContain(
+      '1234  5678  1234  5678'
+    );
   });
 
   it('should display CVV', () => {
@@ -45,7 +49,8 @@ describe('CardComponent', () => {
       ...component.cardData,
     };
     fixture.detectChanges();
-    const cardHolderNameElement = fixture.nativeElement.querySelector('.card-cvv');
+    const cardHolderNameElement =
+      fixture.nativeElement.querySelector('.card-cvv');
     expect(cardHolderNameElement.textContent).toContain('123');
   });
 
@@ -55,8 +60,11 @@ describe('CardComponent', () => {
       isHideInfo: true,
     };
     fixture.detectChanges();
-    const cardHolderNameElement = fixture.nativeElement.querySelector('.card-number');
-    expect(cardHolderNameElement.textContent).toContain('**** **** **** 5678');
+    const cardHolderNameElement =
+      fixture.nativeElement.querySelector('.card-number');
+    expect(cardHolderNameElement.textContent).toContain(
+      '••••  ••••  ••••  5678'
+    );
   });
 
   it('should hide CVV', () => {
@@ -65,7 +73,8 @@ describe('CardComponent', () => {
       isHideInfo: true,
     };
     fixture.detectChanges();
-    const cardHolderNameElement = fixture.nativeElement.querySelector('.card-cvv');
+    const cardHolderNameElement =
+      fixture.nativeElement.querySelector('.card-cvv');
     expect(cardHolderNameElement.textContent).toContain('***');
   });
 });

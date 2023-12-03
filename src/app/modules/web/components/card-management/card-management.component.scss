@@ -32,7 +32,6 @@
 .tab-body {
   margin-left: -1.25rem;
   margin-right: -1.25rem;
-  // padding: 1.25rem;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
   border-radius: var(--border-radius-tab);
   background-color: transparent;
@@ -43,7 +42,22 @@
   }
 }
 
+.button-toggle-card {
+  background-color: var(--aspire-bg-light);
+  color: var(--aspire-green);
+  margin-bottom: -6px;
+  margin-left: auto;
+  padding: 5px 10px 10px;
+  min-width: 170px;
+  &.is-freezed {
+    filter: blur(4px);
+  }
+}
+
 .card {
+  &-list {
+    padding: 1.5rem;
+  }
   &-actions {
     border-top-left-radius: var(--border-radius-element);
     border-top-right-radius: var(--border-radius-element);

@@ -10,7 +10,8 @@ const MOCK_DATA = [
     cardNumber: '1234567812345678',
     expirationDate: '12/34',
     cvvNumber: 123,
-    isHideInfo: false,
+    isHideInfo: true,
+    isFreezed: true,
   },
   {
     id: uuidv4(),
@@ -18,7 +19,8 @@ const MOCK_DATA = [
     cardNumber: '1234567812345678',
     expirationDate: '12/34',
     cvvNumber: 435,
-    isHideInfo: false,
+    isHideInfo: true,
+    isFreezed: false,
   },
   {
     id: uuidv4(),
@@ -27,6 +29,7 @@ const MOCK_DATA = [
     expirationDate: '12/34',
     cvvNumber: 765,
     isHideInfo: false,
+    isFreezed: false,
   },
 ];
 
@@ -48,6 +51,18 @@ export class CardService {
     this._cardList$.next(newList);
   }
 
+  public toggleCard(index: number): void {
+    const listCard = this._cardList$.getValue();
+    listCard[index].isHideInfo = !listCard[index].isHideInfo;
+    this._cardList$.next(listCard);
+  }
+
+  public toggleFreezing(index: number): void {
+    const listCard = this._cardList$.getValue();
+    listCard[index].isFreezed = !listCard[index].isFreezed;
+    this._cardList$.next(listCard);
+  }
+
   public generateCard(cardHolderName: string): void {
     const currentList = this._cardList$.getValue();
     const newItem = {
@@ -55,8 +70,9 @@ export class CardService {
       cardHolderName: cardHolderName,
       cardNumber: this.generateRandomNumber(),
       expirationDate: '12/24',
-      cvvNumber: 123,
+      cvvNumber: this.randomRange(100, 999),
       isHideInfo: false,
+      isFreezed: false,
     };
     this._cardList$.next([...currentList, newItem]);
   }
@@ -67,5 +83,10 @@ export class CardService {
       result += Math.floor(Math.random() * 10);
     }
     return result;
+  }
+
+  private randomRange(min: number, max: number): number {
+    var randVal = min + Math.random() * (max - min);
+    return Math.round(randVal);
   }
 }

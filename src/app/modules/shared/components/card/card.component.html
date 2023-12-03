@@ -8,13 +8,11 @@
   </div>
   <div class="card-body">
     <h2 class="card-holder-name">{{ cardData.cardHolderName }}</h2>
-    <div class="card-number" [ngClass]="{ 'mb-3': !cardData.isHideInfo }">
+    <div class="card-number">
       <span>{{ cardData.cardNumber | cardMask : cardData.isHideInfo }}</span>
     </div>
-    <div class="flex align-items-center">
-      <span class="card-expiration mr-3">
-        Thur: {{ cardData.expirationDate }}
-      </span>
+    <div class="card-info flex align-items-center gap-2">
+      <span class="card-expiration"> Thur: {{ cardData.expirationDate }} </span>
       <span class="card-cvv flex align-items-center">
         CVV:
         <ng-container *ngIf="!cardData.isHideInfo; else hideCvv">

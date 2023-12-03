@@ -1,8 +1,10 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { SharedModule } from '../shared/shared.module';
+import { ThemeModule } from '../theme/theme.module';
 import { WebComponent } from './web.component';
 
 describe('WebComponent', () => {
@@ -11,9 +13,15 @@ describe('WebComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WebComponent ]
-    })
-    .compileComponents();
+      declarations: [WebComponent],
+      imports: [
+        RouterModule,
+        SharedModule,
+        ThemeModule,
+        BrowserAnimationsModule,
+      ],
+      providers: [DialogService, DynamicDialogRef],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
